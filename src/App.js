@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 import './App.css';
+import Footer from './components/Footer';
+import SkillMarquee from './components/Skills';
+import SkillList from './components/Skill';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <Hero />
+      <SkillMarquee />
+      <About />
+      <SkillList/>
+      <Projects />
+      <Contact />
+      <Footer/>
     </div>
   );
-}
+};
 
 export default App;

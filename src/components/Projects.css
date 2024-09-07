@@ -1,0 +1,93 @@
+.projects {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .project-card img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .project-info {
+    padding: 20px;
+  }
+  .projects {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .projects h2 {
+    font-size: 2.5rem;
+    align-content: flex-start;
+    margin-bottom: 50px;
+    color: #ffffff; /* Darker text for better readability */
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid with flexible columns */
+    gap: 30px;
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center grid on larger screens */
+  }
+  
+  .project-card {
+    background: #ffffff; /* White background for cards */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the image does not overflow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+  }
+  
+  .project-info {
+    padding: 20px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #222; /* Slightly darker text for titles */
+  }
+  
+  .project-info p {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text for descriptions */
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  .project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #000;
+  }
+  
+  .project-info p {
+    color: #666;
+  }
+  

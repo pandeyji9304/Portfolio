@@ -1,0 +1,45 @@
+.contact {
+    padding: 60px 20px; /* Adequate padding */
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff; /* Dark text color for readability */
+    font-weight: 700;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+  
+  .social-link {
+    background-color: #ff923f;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .social-link:hover {
+    background-color: #005bb5;
+    transform: translateY(-3px);
+  }
+  
+  @media (max-width: 768px) {
+    .social-links {
+      flex-direction: column; /* Stack links vertically on smaller screens */
+    }
+  
+    .social-link {
+      margin-bottom: 10px; /* Space between links */
+    }
+  }
+  

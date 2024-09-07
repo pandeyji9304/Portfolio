@@ -1,0 +1,116 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .navbar.scrolled {
+    background-color: #222; /* Darker color when scrolled */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+    position: relative; /* Required for pseudo-element positioning */
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 15px; /* Adds padding for better click area */
+    display: inline-block; /* Ensures padding affects the element */
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff923f;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right; /* Ensures the animation starts from right to left */
+  }
+  
+  .nav-links a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left; /* Ensures the animation starts from left to right */
+  }
+  
+  .nav-links a:hover {
+    color: #ff923f;
+    transform: translateY(-2px); /* Adds a slight lift effect */
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  }
+  

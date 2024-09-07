@@ -1,0 +1,71 @@
+.skills-list {
+  padding: 60px 20px;
+  color: #ffffff;
+}
+
+.skills-list-header {
+  text-align: left;
+  margin-bottom: 40px; /* Increased spacing for better layout */
+  margin-left: 120px;
+}
+
+.skills-list-header p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #ff923f; /* Accent color */
+  font-weight: 600; /* Make the text stand out */
+}
+
+.skills-list-header h1 {
+  font-size: 2.5rem; /* Slightly smaller to fit better */
+  font-weight: 700;
+  margin: 10px 0 0;
+}
+
+.skills-list-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between; /* Distribute space evenly */
+  gap: 20px; /* Add space between items */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  background: #2d2d2d; /* Slightly lighter background for categories */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  width: calc(25% - 20px); /* Ensure four boxes fit in a row, accounting for gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.skill-category h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #ff923f; /* Accent color for headers */
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .skills-list-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+  }
+
+  .skill-category {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 20px; /* Add space between stacked items */
+  }
+}
