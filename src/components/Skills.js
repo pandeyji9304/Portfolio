@@ -7,6 +7,20 @@ const skills = [
   { name: 'SwiftUI', icon: <FaApple /> },
   { name: 'HTML5', icon: <FaHtml5 /> },
   { name: 'CSS3', icon: <FaCss3Alt /> },
+  { name: 'JavaScript', icon: <FaJs /> },{ name: 'React', icon: <FaReact /> },
+  { name: 'SwiftUI', icon: <FaApple /> },
+  { name: 'HTML5', icon: <FaHtml5 /> },
+  { name: 'CSS3', icon: <FaCss3Alt /> },
+  { name: 'JavaScript', icon: <FaJs /> },
+  { name: 'React', icon: <FaReact /> },
+  { name: 'SwiftUI', icon: <FaApple /> },
+  { name: 'HTML5', icon: <FaHtml5 /> },
+  { name: 'CSS3', icon: <FaCss3Alt /> },
+  { name: 'JavaScript', icon: <FaJs /> },
+  { name: 'React', icon: <FaReact /> },
+  { name: 'SwiftUI', icon: <FaApple /> },
+  { name: 'HTML5', icon: <FaHtml5 /> },
+  { name: 'CSS3', icon: <FaCss3Alt /> },
   { name: 'JavaScript', icon: <FaJs /> },
 ];
 
@@ -15,7 +29,7 @@ function SkillMarquee() {
     <section className="skills-marquee">
       <div className="skills-marquee-container">
         <ul className="skills-marquee-list">
-          {skills.map((skill, index) => (
+          {skills.concat(skills).map((skill, index) => (
             <li key={index} className="skills-marquee-item">
               <span className="skill-icon">{skill.icon}</span>
               <span className="skill-name">{skill.name}</span>

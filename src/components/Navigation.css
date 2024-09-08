@@ -12,7 +12,6 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: #333;
     color: #fff;
     position: fixed;
     width: 100%;
@@ -91,6 +90,16 @@ html, body {
   }
   
   /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .navbar {
+      padding: 15px 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .logo {
+      font-size: 1.4rem; /* Slightly smaller logo on medium screens */
+    }
+  }
+  
   @media (max-width: 768px) {
     .nav-links {
       display: none;
@@ -103,6 +112,7 @@ html, body {
       text-align: center;
       padding: 20px;
       box-sizing: border-box; /* Include padding in width calculation */
+      z-index: 999; /* Ensure nav-links appear above other content */
     }
   
     .nav-links.active {
@@ -111,6 +121,17 @@ html, body {
   
     .menu-toggle {
       display: flex;
+    }
+    
+    .menu-toggle .bar {
+      background-color: #ff923f; /* Highlight bar color for menu toggle */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .nav-links a {
+      font-size: 0.9rem; /* Smaller font size on very small screens */
+      padding: 8px 12px; /* Adjust padding for smaller screens */
     }
   }
   

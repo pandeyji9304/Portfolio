@@ -1,29 +1,36 @@
-
-.about-content {
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element’s total width and height */
+  }
+  
+  /* About Content Styles */
+  .about-content {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto; /* Center the container, not the content */
   }
   
-  
-  .about-header p {
-    color: #ffffff; /* White color for the header text */
-    text-align: left; /* Align the header text to the left */
-    margin-left: 120px; /* Add left margin to shift the header slightly to the right */
-  }
-
-
   .about-header {
     margin-bottom: 40px; /* Add margin below the header */
+    margin-bottom: 40px;
+    margin-left: 120px;
+  }
+  
+  .about-header p {
+    color: #ff923f; /* White color for the header text */
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 600;
   }
   
   .about-header h1 {
-    font-size: 3rem; /* Adjust the size as needed */
+    font-size: 2.5rem; /* Adjust the size as needed */
     color: #ffffff; /* White color for the header text */
     font-weight: 700; /* Bold font weight */
-    text-align: left; /* Align the header text to the left */
-    margin-left: 120px; /* Add left margin to shift the header slightly to the right */
+    margin: 0; /* Add left margin to shift the header slightly to the right */
   }
   
   .bio {
@@ -77,14 +84,86 @@
     margin-bottom: 10px;
   }
   
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .about-header h1 {
+      font-size: 2.5rem; /* Adjust font size for medium screens */
+      margin-left: 80px; /* Adjust left margin for medium screens */
+    }
+  
+    .about-header p {
+      margin-left: 80px; /* Adjust left margin for medium screens */
+    }
+  
+    .bio-text h2 {
+      font-size: 1.8rem; /* Adjust font size for bio header text */
+    }
+  
+    .bio-text p {
+      font-size: 1.1rem; /* Adjust font size for bio text */
+    }
+  
+    .experience, .education {
+      width: 48%; /* Adjust width to fit better on medium screens */
+    }
+  }
+  
   @media (max-width: 768px) {
+    .about-header h1 {
+      font-size: 2rem; /* Further adjust font size for smaller screens */
+      margin-left: 20px; /* Adjust left margin for smaller screens */
+    }
+  
+    .about-header p {
+      margin-left: 20px; /* Adjust left margin for smaller screens */
+    }
+  
+    .bio-text h2 {
+      font-size: 1.5rem; /* Further adjust font size for bio header text */
+    }
+  
+    .bio-text p {
+      font-size: 1rem; /* Further adjust font size for bio text */
+    }
+  
     .details {
       flex-direction: column;
     }
   
     .experience, .education {
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 30px; /* Add bottom margin for spacing */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-header h1 {
+      font-size: 1.5rem; /* Further reduce font size for very small screens */
+      margin-left: 0; /* Remove left margin for very small screens */
+    }
+  
+    .about-header p {
+      margin-left: 0; /* Remove left margin for very small screens */
+    }
+  
+    .bio-text h2 {
+      font-size: 1.2rem; /* Further reduce font size for bio header text */
+    }
+  
+    .bio-text p {
+      font-size: 0.9rem; /* Further reduce font size for bio text */
+    }
+  
+    .experience, .education {
+      padding: 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .experience h3, .education h3 {
+      font-size: 1.2rem; /* Reduce font size for section headers */
+    }
+  
+    .experience li, .education li {
+      font-size: 1rem; /* Reduce font size for list items */
     }
   }
   

@@ -6,7 +6,7 @@ function About() {
     
     <section id="about" className="about">
       <div className="about-header">
-        <p>What I Can Do</p>
+        <p>Get to know more</p>
         <h1>About Me</h1>
       </div>
       <div className="about-content">

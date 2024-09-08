@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import './Projects.css';
+import './Projects.css'; // Reuse the same CSS file for consistency
 
-const projects = [
+const graphicDesignProjects = [
   {
-    title: "Project 1",
-    description: "This is an amazing UI/UX project that solves real user problems.",
-    image: "project1.jpg",
-    link: "https://pandeyji9304.framer.website/#about"
+    title: "Design Project 1",
+    description: "A visually stunning graphic design project showcasing modern design trends.",
+    image: "designproject1.jpg",
+    link: "https://example.com/designproject1"
   },
   {
-    title: "Project 2",
-    description: "This is another awesome project focusing on mobile app design.",
-    image: "project2.jpg",
-    link: "https://example.com/project2"
+    title: "Design Project 2",
+    description: "An innovative graphic design work with a focus on creative visual storytelling.",
+    image: "designproject2.jpg",
+    link: "https://example.com/designproject2"
   },
   {
-    title: "Project 3",
-    description: "Innovative project with a focus on user-centered design and technology.",
-    image: "project3.jpg",
-    link: "https://example.com/project3"
+    title: "Design Project 3",
+    description: "A cutting-edge design project featuring unique graphics and impactful visuals.",
+    image: "designproject3.jpg",
+    link: "https://example.com/designproject3"
   },
 ];
 
-const Projects = () => {
-  const [flipped, setFlipped] = useState(Array(projects.length).fill(false));
+const GraphicDesignProjects = () => {
+  const [flipped, setFlipped] = useState(Array(graphicDesignProjects.length).fill(false));
 
   const handleFlip = (index) => {
     const newFlipped = [...flipped];
@@ -32,11 +32,10 @@ const Projects = () => {
   };
 
   return (
-    <section className="projects" id="projects">
-    <p>Explore my work</p>
-      <h1>Case Study</h1>
+    <section className="projects" id="graphic-design-projects">
+      <h1>Graphic Design Projects</h1>
       <div className="projects-grid">
-        {projects.map((project, index) => (
+        {graphicDesignProjects.map((project, index) => (
           <div
             className={`project-card ${flipped[index] ? 'flipped' : ''}`}
             key={index}
@@ -62,10 +61,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
-
-
-
   );
 };
 
-export default Projects;
+export default GraphicDesignProjects;

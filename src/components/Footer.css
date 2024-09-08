@@ -22,6 +22,7 @@
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 20px; /* Add padding for better spacing */
   }
   
   .footer-content p {
@@ -29,15 +30,36 @@
     font-size: 1rem;
   }
   
+  @media (max-width: 992px) {
+    .footer-nav a {
+      font-size: 0.9rem; /* Slightly smaller text on medium screens */
+    }
+  }
+  
   @media (max-width: 768px) {
     .footer-nav {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Center the links */
     }
   
     .footer-nav a {
       margin: 5px 0;
+      font-size: 1rem; /* Keep font readable on small screens */
+    }
+  
+    .footer-content p {
+      font-size: 0.9rem; /* Reduce font size slightly for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .footer-nav a {
+      font-size: 0.85rem; /* Further reduce size for very small screens */
+    }
+  
+    .footer-content p {
+      font-size: 0.85rem; /* Match text size in footer content */
     }
   }
   

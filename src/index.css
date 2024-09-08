@@ -5,6 +5,7 @@ body {
   background: linear-gradient(135deg, #1a1a1d 0%, #4e4e50 100%);
   color: #fff;
   height: 100%;
+  cursor: url('https://pngimg.com/uploads/cursor/cursor_PNG100721.png'), auto;
 }
 
 code {

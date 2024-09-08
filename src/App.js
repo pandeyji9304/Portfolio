@@ -8,6 +8,9 @@ import './App.css';
 import Footer from './components/Footer';
 import SkillMarquee from './components/Skills';
 import SkillList from './components/Skill';
+import WebProjects from './components/Webprojects';
+import SwiftProjects from './components/SwiftProjects';
+import GraphicDesignProjects from './components/GraphicDesignProjects';
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +35,9 @@ const App = () => {
       <About />
       <SkillList/>
       <Projects />
+      <WebProjects/>
+      <SwiftProjects/>
+      <GraphicDesignProjects/>
       <Contact />
       <Footer/>
     </div>

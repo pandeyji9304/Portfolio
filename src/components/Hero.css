@@ -1,3 +1,4 @@
+/* General Hero Styles */
 .hero {
     height: 75vh;
     display: flex;
@@ -5,6 +6,7 @@
     justify-content: center;
     color: white;
     padding: 0 2rem;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
   }
   
   .hero-content {
@@ -13,11 +15,13 @@
     max-width: 1200px;
     width: 100%;
     align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   }
   
   .text-container {
     text-align: left;
-    flex: 1; /* Ensures text-container takes up space */
+    flex: 1;
+    max-width: 100%; /* Ensure container doesn't exceed its parent width */
   }
   
   .text-container h1 {
@@ -57,7 +61,7 @@
     background-color: #ff923f;
     color: white;
     text-transform: uppercase;
-    border-radius: 25px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s;
@@ -65,20 +69,103 @@
   }
   
   .cta-btn:hover {
-    background-color: #e62e6b;
+    background-color: #000000;
   }
   
+  /* Floating Rectangle */
   .rectangle-container {
-    flex: 1; /* Ensures rectangle-container takes up space */
+    flex: 1;
     display: flex;
     justify-content: center;
+    margin-top: 2rem; /* Ensure space above the floating rectangle on smaller screens */
   }
   
   .rectangle {
-    width: 300px; /* Adjust width as needed */
-    height: 300px; /* Adjust height as needed */
-    background-color: #ff923f; /* Rectangle color */
+    width: 300px;
+    height: 300px;
+    background-color: #ff923f; /* Orange color */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1200px) {
+    .text-container h1 {
+      font-size: 3rem; /* Slightly smaller on medium screens */
+    }
+  
+    .text-container h3 {
+      font-size: 1.6rem; /* Slightly smaller on medium screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hero {
+      padding: 0 1rem; /* Less padding on medium screens */
+    }
+  
+    .text-container p {
+      font-size: 1.1rem; /* Slightly smaller text on medium screens */
+      max-width: 100%; /* Ensure text container doesn't exceed its parent */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: auto; /* Allow height to adjust with content on small screens */
+      padding: 2rem 1rem; /* Adjust padding for small screens */
+    }
+  
+    .hero-content {
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center text */
+    }
+  
+    .text-container {
+      max-width: 100%; /* Ensure text container fits within the hero section */
+    }
+  
+    .cta-btn {
+      margin: 1rem 0; /* Adjust margin for vertical stacking */
+    }
+  
+    .rectangle-container {
+      margin-top: 2rem; /* Space above the rectangle on small screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .text-container h1 {
+      font-size: 2.5rem; /* Further reduce size on very small screens */
+    }
+  
+    .text-container h3 {
+      font-size: 1.4rem; /* Further reduce size on very small screens */
+    }
+  
+    .text-container p {
+      font-size: 1rem; /* Reduce text size on very small screens */
+    }
+  
+    .cta-btn {
+      padding: 0.6rem 1.5rem; /* Adjust button padding */
+      font-size: 0.9rem; /* Reduce button font size */
+    }
+  
+    .rectangle {
+      width: 250px; /* Slightly smaller rectangle on very small screens */
+      height: 250px; /* Adjust height accordingly */
+    }
   }
   

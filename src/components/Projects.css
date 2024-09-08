@@ -1,93 +1,221 @@
+/* Projects Section Styles */
 .projects {
-    padding: 80px 20px;
-    text-align: center;
-  }
-  
-  .projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #333;
-  }
-  
-  .projects-grid {
+    text-align: left; /* Align text to the left */
+    margin: 0 auto 40px; /* Center the section and add bottom margin */
+    max-width: 1200px; /* Set a max-width for the section */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.projects p {
+    font-size: 1.2rem;
+    margin: 0 0 20px; /* Adjust margin to space out from the header */
+    color: #ff923f;
+    font-weight: 600;
+}
+
+.projects h1 {
+    font-size: 2.5rem; /* Adjust the size as needed */
+    color: #ffffff; /* White color for the header text */
+    font-weight: 700; /* Bold font weight */
+    margin: 0 0 30px; /* Adjust margin to space out from the paragraph */
+}
+
+/* Responsive Grid for Projects */
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-  
-  .project-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .project-card img {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Adjust gap for better spacing */
+    margin: 0 auto;
+    padding: 0 10px; /* Add padding to ensure spacing on smaller screens */
+}
+
+/* Project Card Styles */
+.project-card {
     width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-  
-  .project-info {
-    padding: 20px;
-  }
-  .projects {
-    padding: 80px 20px;
+    height: 350px;
+    position: relative;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    z-index: 1;
+    cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+}
+
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    transform-origin: center;
+}
+
+.project-card.flipped .project-card-inner {
+    transform: rotateY(180deg);
+    z-index: 10;
+}
+
+.project-card-front,
+.project-card-back {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.project-card-front {
+    background: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: rotateY(0deg);
+}
+
+.project-card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 15px;
     text-align: center;
-  }
-  
-  .projects h2 {
-    font-size: 2.5rem;
-    align-content: flex-start;
-    margin-bottom: 50px;
-    color: #ffffff; /* Darker text for better readability */
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid with flexible columns */
-    gap: 30px;
-    max-width: 1200px; /* Maximum width for larger screens */
-    margin: 0 auto; /* Center grid on larger screens */
-  }
-  
-  .project-card {
-    background: #ffffff; /* White background for cards */
-    border-radius: 15px; /* Rounded corners for a modern look */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    overflow: hidden; /* Ensure the image does not overflow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-  }
-  
-  .project-card img {
-    width: 100%;
-    height: 200px; /* Fixed height for images */
-    object-fit: cover; /* Ensure images cover the area without distortion */
-  }
-  
-  .project-info {
-    padding: 20px;
-  }
-  
-  .project-info h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    color: #222; /* Slightly darker text for titles */
-  }
-  
-  .project-info p {
-    font-size: 1rem;
-    color: #555; /* Slightly lighter text for descriptions */
-    line-height: 1.5; /* Improve readability */
-  }
-  
-  .project-info h3 {
+}
+
+.project-info h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #000;
-  }
-  
-  .project-info p {
-    color: #666;
-  }
-  
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.project-card-back {
+    background: #333;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project-card-back p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.view-more-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ff923f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #000000;
+}
+
+/* Custom flip cursor */
+.project-card:hover {
+    cursor: pointer; /* Custom cursor removed as standard pointer is better for usability */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .projects h1 {
+        font-size: 2rem; /* Adjust font size for medium screens */
+    }
+
+    .project-card {
+        height: 300px; /* Adjust card height for smaller screens */
+    }
+
+    .project-card-front img {
+        height: 180px; /* Adjust image height for smaller screens */
+    }
+
+    .project-info h3 {
+        font-size: 1.3rem; /* Adjust font size for project titles */
+    }
+
+    .project-card-back p {
+        font-size: 1rem; /* Adjust font size for project descriptions */
+    }
+
+    .view-more-btn {
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 40px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .projects h1 {
+        font-size: 1.8rem; /* Further reduce font size for smaller screens */
+        margin-bottom: 20px; /* Adjust margin for smaller screens */
+    }
+
+    .project-card {
+        height: 250px; /* Further adjust card height */
+    }
+
+    .project-card-front img {
+        height: 150px; /* Further adjust image height */
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem; /* Further adjust font size for project titles */
+    }
+
+    .project-card-back p {
+        font-size: 0.9rem; /* Further adjust font size for project descriptions */
+    }
+
+    .view-more-btn {
+        font-size: 0.8rem; /* Further adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects {
+        padding: 20px; /* Further reduce padding */
+    }
+
+    .projects h1 {
+        font-size: 1.5rem; /* Further reduce font size */
+    }
+
+    .project-card {
+        height: 200px; /* Further reduce card height */
+    }
+
+    .project-card-front img {
+        height: 120px; /* Further reduce image height */
+    }
+
+    .project-info h3 {
+        font-size: 1rem; /* Further reduce font size for project titles */
+    }
+
+    .project-card-back p {
+        font-size: 0.8rem; /* Further reduce font size for project descriptions */
+    }
+
+    .view-more-btn {
+        font-size: 0.7rem; /* Further reduce button font size */
+    }
+}
